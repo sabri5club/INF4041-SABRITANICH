@@ -1,0 +1,25 @@
+<div class="col-md-6 col-md-offset-3">
+<h1>Modifier Le Livre</h1>
+
+<%= simple_form_for(@livre) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  <p><strong>category</strong></p>
+    <%= f.select :category_id, @categories %>
+    <%= f.input :titre %>
+    <%= f.input :auteur %>
+    <%= f.input :description %>
+    <%= f.input :url %>
+    <%= f.input :prix %>
+    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Modifier Livre" %>
+  </div>
+<% end %>
+
+<%= link_to 'Afficher', @livre %> |
+<%= link_to 'Retourner', root_path %>
+</div>

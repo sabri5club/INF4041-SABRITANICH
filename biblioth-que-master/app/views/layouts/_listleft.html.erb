@@ -1,0 +1,36 @@
+<div class="list-left" id="dashboard">
+  <div class="element">
+			<span class="glyphicon glyphicon-home" aria-hidden="true"></span> <%= link_to "Home", root_path %>
+  </div>
+  <div class="element">
+              <span class="glyphicon glyphicon-tags" aria-hidden="true"></span> <%= link_to "Tags", '#' %>
+  </div>
+  <div class="element">
+				<span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> <%= link_to "videos", videos_path %> (<%= @videos.count %>) 
+
+  </div>
+  <div class="element">
+        <span class="glyphicon glyphicon-magnet" aria-hidden="true"></span> <%= link_to "Links", links_path %> (<%= @links.count %>)
+
+  </div>
+
+  <div class="element">
+        <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> <%= link_to "Post", posts_path %> (<%= @posts.count %> )
+
+  </div>
+
+   <div class="element">
+        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= link_to "Location", links_path %> (5)
+
+  </div>
+
+    <div class="element">
+        <span class="glyphicon glyphicon-picture" aria-hidden="true"></span> <%= link_to "Picture", links_path %> (8)
+
+  </div>
+
+  <div class="element">
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <%= link_to "calander", links_path %> (2)
+
+  </div>
+</div>

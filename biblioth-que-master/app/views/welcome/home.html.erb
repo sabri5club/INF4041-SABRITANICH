@@ -1,0 +1,48 @@
+<div class="landing-page">
+
+
+<header>
+	
+	
+</header>
+<!-- si la variable livres retourne null  --> 
+ <% if @livres.blank? %>
+   <div class="jumbotron">
+      <div class="container">
+        <h1>Bienvenue dans votre bibliothèque spécialisée !!</h1>
+     <p>Plus clair, plus pratique, plus convivial, le site LivresApp est une bibliothèque en ligne, celui-ci fait la part belle aux ouvrages .
+	Ainsi, en cliquant par exemple sur l'onglet "Créer", puis selectionner la partie Livre, vous arrivez directement au rayon concernant à la creation d'un nouveau livre, mais tous cela n'ai fait qu'après une bonne authentification.</p> 
+	<strong>Admin</strong>
+
+  <p> <%= link_to "Créer un livre ..", new_livre_path, class: "btn btn-primary btn-lg" %></p>
+      </div>
+    </div>
+    <!--sinon il va afficher tous les livres-->
+ <% else %>
+ <h1>Librairie</h1>
+ <div class="container">
+	<div class="row">
+	<% @livres.each do |livre| %>
+	        <div class="col-lg-4">
+	    <div class="thumbnail">
+	    <img src="http://www.idboox.com/wp-content/uploads/2011/03/Harlan_Coben_Ebooks-IDBOOX.jpg" alt="">
+	    </div>
+	        <h2 style="color: blue;">Titre: <%= livre.titre %> </h2>
+	        <h3>Categorie: <%= livre.category.name %></h3>
+	        <h3>Auteur: <%= livre.auteur %></h3>
+	        <h3>Description :</h3> <p> <%= truncate(livre.description, :length => 150)  %></p>
+
+	        <h3>Prix: <%= livre.prix %> €</h3>
+	        <p> <%= link_to 'Acceder', livre, class: "btn btn-primary" %></p>      
+	      </div>
+	    <% end %>
+	  </div>
+	  </div>
+ <% end %>
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">2016 créer par Sabri T.</p>
+      </div>
+    </footer>
+
+</div>

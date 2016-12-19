@@ -1,0 +1,22 @@
+<div class="col-md-6 col-md-offset-3">
+<h1>Nouveau Livre</h1>
+<%= simple_form_for(@livre) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Choisir catégorie") %>
+    <%= f.input :titre %>
+    <%= f.input :auteur %>
+    <%= f.input :description %>
+    <%= f.input :url %>
+    <%= f.input :prix %>
+    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Ajouter Livre" %>
+  </div>
+<% end %>
+
+<%= link_to 'Retourner', root_path %>
+</div>
